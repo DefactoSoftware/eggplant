@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+
+  <div class="tweet">
+    <%= f.label :tweet %>
+    <%= f.text_area :tweet %>
+  </div>
+
+  <div class="planned-time">
+    <%= f.label :planned_time %>
+    <%= f.datetime_select :planned_time %>
+  </div>
+  <%= f.submit %>
+<% end %>

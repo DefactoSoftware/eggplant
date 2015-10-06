@@ -1,0 +1,12 @@
+<div>
+  <% @posts.each do |post| %>
+  <div>
+    <%= link_to post.tweet, post_path(post) %>
+    <%= post.planned_time %>
+    <%= link_to 'edit', edit_post_path(post) %>
+    <%= link_to 'delete', post_path(post), method: :delete %>
+  </div>
+  <hr>
+  <% end %>
+</div>
+<%= button_to 'New Post!', new_post_path, method: :get %>
