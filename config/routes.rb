@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root "static_pages#home"
+  root to: 'home#index'
 
-  resource :posts
+  get "/auth/:provider/callback", to: "sessions#create"
+  get "/signout", to: "sessions#destroy", as: :signout
+
 end
