@@ -6,7 +6,10 @@
       <% end %>
     <span class="user-menu pull-right">
       <% if current_user %>
-        Signed in as: <%= current_user.name %>
+        <%= link_to 'All posts', posts_path %>
+        <%= link_to user_path(current_user) do %>
+          <%= image_tag current_user.image_url, class: "avatar" %>
+        <% end %>
         <%= link_to "Sign Out", signout_path, class: "button" %>
       <% else %>
         <%= link_to "Sign in with Twitter", "/auth/twitter", class: "button" %>

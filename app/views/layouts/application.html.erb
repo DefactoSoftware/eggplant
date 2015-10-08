@@ -10,15 +10,15 @@
 <header>
   <%= render "navigation" %>
 </header>
-  <% flash.each do |key, value| %>
-    <div class="flash-<%= key %>">
-      <span><%= value %></span>
-    </div>
-  <% end %>
+
 <div class="wrap container" role="main">
-  <h2><%= link_to 'All posts', posts_path %></h2>
   <%= yield %>
 </div>
 
+<% flash.each do |key, value| %>
+  <div class="flash-<%= key %>">
+    <span><%= value %></span>
+  </div>
+<% end %>
 </body>
 </html>

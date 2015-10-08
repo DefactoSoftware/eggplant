@@ -1,0 +1,10 @@
+<div>
+  <h1>User Profile</h1>
+  <%= @user.name %>
+  <hr>
+  <%= image_tag @user.image_url, class: "avatar" %>
+  <% if current_user.id == @user.id %>
+    <%= link_to "edit your profile", edit_user_path(@user) %>
+  <% end %>
+
+</div>

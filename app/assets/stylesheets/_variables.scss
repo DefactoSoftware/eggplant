@@ -6,6 +6,24 @@ $heading-line-height: 1.2;
 // base colors
 $soft-green: rgba(116,171,77,0.64);
 $gray: #f3f5ff;
+$off-white: #e9e9e9;
+$eggplant: #e0cce2;
+$eggplant-dark: #96529a;
 
 // ui colors
 $nav-color: $soft-green;
+$container-background: $off-white;
+
+//typography
+h1 {
+  font-size: 3em;
+  font-weight: 100;
+}
+
+hr {
+  color: $eggplant-dark;
+}
+
+p {
+  margin-bottom: 2em;
+}

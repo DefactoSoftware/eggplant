@@ -18,12 +18,21 @@
 @import "normalize-rails";
 @import "variables";
 
+body {
+  background: $eggplant;
+}
+
 .navigation {
   background: $nav-color;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   max-height: 4em;
   position: relative;
   width: 100%;
   z-index: 60;
+
+  .wrap {
+    line-height: 4em;
+  }
 
   .logo {
     display: inline;
@@ -43,7 +52,6 @@
 }
 
 .wrap {
-  line-height: 4em;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
@@ -52,9 +60,21 @@
 
 .container {
   @include clearfix;
-  background-color: $gray;
+  background-color: $container-background;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0, 0, 0, 0.15);
   padding-top: 4em;
   margin-bottom: 4em;
+
+    a {
+      color: $eggplant-dark;
+      font-weight: 200;
+      text-decoration: none;
+    }
+
+    .button {
+      border: 2px solid $eggplant-dark;
+      font-weight: normal;
+    }
 }
 
 .pull-right {
@@ -65,4 +85,23 @@
   border: 1px solid white;
   border-radius: 3px;
   padding: .68em;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 3em;
+  margin: .5em;
+  vertical-align: top;
+
+  &.small {
+    height: 2em;
+  }
+}
+
+.callout {
+  color: $eggplant-dark;
+}
+
+.user {
+  line-height: 3em;
 }
