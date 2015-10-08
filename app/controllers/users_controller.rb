@@ -31,6 +31,8 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user
+    unless @user == current_user
+      redirect_to users_path, notice: "Not authorized"
+    end
   end
 end

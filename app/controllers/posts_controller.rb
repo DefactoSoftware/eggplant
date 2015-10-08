@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_filter :authorize
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
 
   def index
     @posts = Post.all
@@ -48,4 +50,10 @@ class PostsController < ApplicationController
     params.require(:post).permit(:tweet, :planned_time)
   end
 
+  def correct_user
+    @user = resource.user
+    unless @user == current_user
+      redirect_to posts_path, notice: "Not authorized"
+    end
+  end
 end
