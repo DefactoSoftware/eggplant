@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  # auth?
+  before_filter :authorize
 
   def index
     @posts = Post.all
