@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bourbon";
+@import "normalize-rails";
+@import "variables";
+
+.navigation {
+  background: $nav-color;
+  max-height: 4em;
+  position: relative;
+  width: 100%;
+  z-index: 60;
+
+  .logo {
+    display: inline;
+    height: 4em;
+  }
+
+  a {
+    color: white;
+    font-weight: 200;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    line-height: 4em;
+    vertical-align: top;
+  }
+}
+
+.wrap {
+  line-height: 4em;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.7em;
+}
+
+.container {
+  @include clearfix;
+  background-color: $gray;
+  padding-top: 4em;
+  margin-bottom: 4em;
+}
+
+.pull-right {
+  float: right;
+}
+
+.button {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: .68em;
+}

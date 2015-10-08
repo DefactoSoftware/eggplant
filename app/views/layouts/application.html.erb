@@ -7,26 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="user_nav">
-  <% if current_user %>
-    Welcome, <%= current_user.name %>!
-    <%= link_to "Sign Out", signout_path %>
-  <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<header>
+  <%= render "navigation" %>
+</header>
+  <% flash.each do |key, value| %>
+    <div class="flash-<%= key %>">
+      <span><%= value %></span>
+    </div>
   <% end %>
-</div>
-<div>
+<div class="wrap container" role="main">
   <h2><%= link_to 'All posts', posts_path %></h2>
-<hr>
-
-<%= yield %>
-
-<% flash.each do |key, value| %>
-  <div class="flash-<%= key %>">
-    <span><%= value %></span>
-  </div>
-<% end %>
-<div>
+  <%= yield %>
+</div>
 
 </body>
 </html>
