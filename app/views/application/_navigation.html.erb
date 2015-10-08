@@ -1,0 +1,16 @@
+<nav class="navigation" role="navigation">
+  <section class="wrap">
+      <%= link_to root_path do %>
+        <%= image_tag "eggplant.png", class: "logo" %>
+        <span class="logo-text">Eggplant</span>
+      <% end %>
+    <span class="user-menu pull-right">
+      <% if current_user %>
+        Signed in as: <%= current_user.name %>
+        <%= link_to "Sign Out", signout_path, class: "button" %>
+      <% else %>
+        <%= link_to "Sign in with Twitter", "/auth/twitter", class: "button" %>
+      <% end %>
+    </span>
+  </section>
+</nav>
