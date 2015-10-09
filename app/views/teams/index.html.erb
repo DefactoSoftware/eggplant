@@ -1,13 +1,14 @@
 <div>
   <% @teams.each do |team| %>
   <div>
-    <%= team.name %><br>
-    <%= team.description %>
+    <%= link_to team.name, team_path(team) %>
 
     <%= link_to 'edit', edit_team_path(team) %>
     <%= link_to 'delete', team_path(team), method: :delete %>
   </div>
   <hr>
   <% end %>
+  <p>
+    <%= link_to 'New Team', new_team_path, method: :get, class: "button" %>
+  </p>
 </div>
-

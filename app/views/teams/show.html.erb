@@ -1,5 +1,10 @@
 <div>
-  <%= @team.name %>
+  <h1><%= @team.name %> </h1>
+  (owned by
+    <%= link_to @team.owner.name, user_path(@team.owner) %>
+  )
   <hr>
-  <%= @team.description %>
+  <p>
+    <%= @team.description %>
+  </p>
 </div>
