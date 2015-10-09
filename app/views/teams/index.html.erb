@@ -1,0 +1,13 @@
+<div>
+  <% @teams.each do |team| %>
+  <div>
+    <%= team.name %><br>
+    <%= team.description %>
+
+    <%= link_to 'edit', edit_team_path(team) %>
+    <%= link_to 'delete', team_path(team), method: :delete %>
+  </div>
+  <hr>
+  <% end %>
+</div>
+
