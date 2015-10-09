@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :teams
+
+  post "/teams/:id/join", to: "teams#join", as: :join_team
+  post "/teams/:id/leave", to: "teams#leave", as: :leave_team
+
 end

@@ -7,4 +7,17 @@
   <p>
     <%= @team.description %>
   </p>
+  <h2>Members</h2>
+  <ul>
+    <% @team.users.each do |member| %>
+      <li><%= member.name %></li>
+    <% end %>
+  </ul>
+
+  <p>
+    <% if is_member %>
+      <%= link_to "Leave Team :(", leave_team_path(@team), method: :post, class: "button" %>
+    <% else %>
+      <%= link_to "Join Team!", join_team_path(@team), method: :post, class: "button" %>
+    <% end %>
 </div>

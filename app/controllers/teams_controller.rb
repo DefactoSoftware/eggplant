@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  helper_method :is_member
   before_filter :authorize
   before_action :correct_user, only: [:edit, :update, :destroy]
 
@@ -39,6 +40,20 @@ class TeamsController < ApplicationController
     redirect_to teams_path
   end
 
+  def join
+    @membership = Membership.new
+    @membership.user = current_user
+    @membership.team = resource
+    @membership.save
+    redirect_to team_path(resource)
+  end
+
+  def leave
+    @membership = current_user.memberships.find_by_team_id(resource.id)
+    @membership.destroy!
+    redirect_to team_path(resource)
+  end
+
   private
 
   def resource
@@ -54,5 +69,9 @@ class TeamsController < ApplicationController
     unless @user == current_user
       redirect_to teams_path, notice: "Not authorized"
     end
+  end
+
+  def is_member
+    return true if resource.users.include?(current_user)
   end
 end
