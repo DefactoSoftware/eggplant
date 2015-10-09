@@ -7,4 +7,13 @@
   <p>
     <%= @team.description %>
   </p>
+  <h2>Members</h2>
+  <ul>
+    <% @team.users.each do |member| %>
+      <li><%= member.name %></li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%= link_to "Join Team!", join_team_path(@team), method: :post %>
 </div>

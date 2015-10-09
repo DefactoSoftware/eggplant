@@ -39,6 +39,17 @@ class TeamsController < ApplicationController
     redirect_to teams_path
   end
 
+  def join
+    @membership = Membership.new
+    @membership.user = current_user
+    @membership.team = resource
+    @membership.save
+    redirect_to team_path(resource)
+  end
+
+  def leave
+  end
+
   private
 
   def resource
