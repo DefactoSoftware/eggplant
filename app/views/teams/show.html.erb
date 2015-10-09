@@ -15,5 +15,9 @@
   </ul>
 
   <p>
-    <%= link_to "Join Team!", join_team_path(@team), method: :post %>
+    <% if is_member %>
+      <%= link_to "Leave Team :(", leave_team_path(@team), method: :post, class: "button" %>
+    <% else %>
+      <%= link_to "Join Team!", join_team_path(@team), method: :post, class: "button" %>
+    <% end %>
 </div>
