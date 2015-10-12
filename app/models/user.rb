@@ -27,8 +27,13 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
       user.image_url = auth["info"]["image"]
+      user.twitter_handle = auth["info"]["nickname"]
       user.twitter_token = auth["credentials"]["token"]
       user.twitter_secret = auth["credentials"]["secret"]
     end
+  end
+
+  def twitter_url
+    'https://www.twitter.com/@' + twitter_handle
   end
 end

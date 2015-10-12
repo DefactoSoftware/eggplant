@@ -6,7 +6,6 @@
       <% end %>
     <span class="user-menu pull-right">
       <% if current_user %>
- |
         <%= link_to 'Teams', teams_path %>
         <%= link_to user_path(current_user) do %>
           <%= image_tag current_user.image_url, class: "avatar" %>
