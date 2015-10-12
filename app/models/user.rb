@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_encrypted :twitter_token, :key => ENV["ENCRYPTED_USER_DATA_KEY"]
+  attr_encrypted :twitter_secret, :key => ENV["ENCRYPTED_USER_DATA_KEY"]
   has_many :posts
 
   has_many :memberships, dependent: :destroy
@@ -10,6 +12,8 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
       user.image_url = auth["info"]["image"]
+      user.twitter_token = auth["credentials"]["token"]
+      user.twitter_secret = auth["credentials"]["secret"]
     end
   end
 end

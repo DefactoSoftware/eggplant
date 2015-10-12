@@ -12,6 +12,8 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem "normalize-rails"
 gem "bourbon"
+gem "twitter"
+gem "attr_encrypted"
 
 group :development, :test do
   gem "byebug"

@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   post "/teams/:id/join", to: "teams#join", as: :join_team
   post "/teams/:id/leave", to: "teams#leave", as: :leave_team
 
+  post "/posts/:id/tweet", to: "posts#tweet", as: :tweet_post
+
 end
