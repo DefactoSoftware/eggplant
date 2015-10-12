@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                       :integer          not null, primary key
+#  provider                 :string
+#  uid                      :string
+#  name                     :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  image_url                :string
+#  encrypted_twitter_token  :string
+#  encrypted_twitter_secret :string
+#
+
 class User < ActiveRecord::Base
   attr_encrypted :twitter_token, :key => ENV["ENCRYPTED_USER_DATA_KEY"]
   attr_encrypted :twitter_secret, :key => ENV["ENCRYPTED_USER_DATA_KEY"]

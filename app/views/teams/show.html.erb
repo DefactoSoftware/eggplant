@@ -7,6 +7,9 @@
   <p>
     <%= @team.description %>
   </p>
+  <p>
+    <%= link_to 'Posts', team_posts_path(@team) %>
+  </p>
   <h2>Members</h2>
   <ul>
     <% @team.users.each do |member| %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012123614) do
+ActiveRecord::Schema.define(version: 20151012212902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151012123614) do
     t.datetime "planned_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -43,8 +44,8 @@ ActiveRecord::Schema.define(version: 20151012123614) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "image_url"
     t.string   "encrypted_twitter_token"
     t.string   "encrypted_twitter_secret"

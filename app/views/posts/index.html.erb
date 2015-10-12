@@ -1,15 +1,15 @@
 <div>
   <% @posts.each do |post| %>
   <div>
-    <%= link_to post.tweet, post_path(post) %>
+    <%= link_to post.tweet, team_post_path(post.team, post) %>
     <%= post.planned_time %>
-    <%= link_to 'edit', edit_post_path(post) %> |
-    <%= link_to 'delete', post_path(post), method: :delete %>
+    <%= link_to 'edit', edit_team_post_path(post.team, post) %> |
+    <%= link_to 'delete', team_post_path(post.team, post), method: :delete %>
   </div>
   <hr>
   <% end %>
   <p>
-    <%= link_to 'New Post!', new_post_path, method: :get, class: "button" %>
+    <%= link_to 'New Post!', new_team_post_path, class: "button" %>
   </p>
 </div>
 
