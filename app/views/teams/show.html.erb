@@ -1,14 +1,17 @@
 <div>
-  <h1><%= @team.name %> </h1>
-  (owned by
-    <%= link_to @team.owner.name, user_path(@team.owner) %>
-  )
-  <hr>
+  <h1><%= @team.name %> <%= link_to "(@#{@team.owner.twitter_handle})", @team.owner.twitter_url %></h1>
   <p>
     <%= @team.description %>
   </p>
+  <p>
+    <%= link_to 'Posts', team_posts_path(@team) %>
+  </p>
   <h2>Members</h2>
   <ul>
+
+    <li>
+      <%= link_to @team.owner.name, user_path(@team.owner) %>(owner)
+    </li>
     <% @team.users.each do |member| %>
       <li><%= member.name %></li>
     <% end %>

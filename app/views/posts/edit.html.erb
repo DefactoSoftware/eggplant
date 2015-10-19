@@ -1,3 +1,14 @@
 <h1>EDIT</h1>
 <hr>
-<%= render "form" %>
+<%= form_for @post, url: team_post_path do |f| %>
+  <div class="tweet">
+    <%= f.label :tweet %>
+    <%= f.text_area :tweet %>
+  </div>
+
+  <div class="planned-time">
+    <%= f.label :planned_time %>
+    <%= f.datetime_select :planned_time %>
+  </div>
+  <%= f.submit class: "button" %>
+<% end %>

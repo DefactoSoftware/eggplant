@@ -2,4 +2,8 @@
   <%= @post.tweet %>
   <hr>
   <%= @post.planned_time %>
+
+  <p>
+    <%= button_to "Tweet!", team_tweet_post_path(@post.team, @post), class: "button" %>
+  </p>
 </div>

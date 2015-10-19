@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#create"
   get "/signout", to: "sessions#destroy", as: :signout
 
-  resources :posts
   resources :users
-  resources :teams
+  resources :teams do
+    resources :posts
+    post "/posts/:id/tweet", to: "posts#tweet", as: :tweet_post
+  end
 
   post "/teams/:id/join", to: "teams#join", as: :join_team
   post "/teams/:id/leave", to: "teams#leave", as: :leave_team
-
 end
