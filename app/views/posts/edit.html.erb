@@ -1,6 +1,6 @@
 <h1>EDIT</h1>
 <hr>
-<%= form_for @post, url: team_post_path, html: { method: :put } do |f| %>
+<%= form_for @post, url: team_post_path do |f| %>
   <div class="tweet">
     <%= f.label :tweet %>
     <%= f.text_area :tweet %>

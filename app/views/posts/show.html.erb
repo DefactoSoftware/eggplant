@@ -4,6 +4,6 @@
   <%= @post.planned_time %>
 
   <p>
-    <%= link_to "Tweet!", team_tweet_post_path(@post.team, @post), method: :post, class: "button" %>
+    <%= button_to "Tweet!", team_tweet_post_path(@post.team, @post), class: "button" %>
   </p>
 </div>

@@ -14,8 +14,8 @@
 #
 
 class User < ActiveRecord::Base
-  attr_encrypted :twitter_token, :key => ENV["ENCRYPTED_USER_DATA_KEY"]
-  attr_encrypted :twitter_secret, :key => ENV["ENCRYPTED_USER_DATA_KEY"]
+  attr_encrypted :twitter_token, key: ENV["ENCRYPTED_USER_DATA_KEY"]
+  attr_encrypted :twitter_secret, key: ENV["ENCRYPTED_USER_DATA_KEY"]
   has_many :posts
 
   has_many :memberships, dependent: :destroy

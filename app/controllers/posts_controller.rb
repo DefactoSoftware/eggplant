@@ -3,18 +3,15 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @team = Team.find(params[:team_id])
-    @posts = @team.posts
+    @posts = Post.where team: current_team
   end
 
   def new
-    @team = Team.find(params[:team_id])
-    @post = @team.posts.new
+    @post = Post.new(user: current_user, team: current_team)
   end
 
   def create
-    @team = Team.find(params[:team_id])
-    @post = @team.posts.new(post_params)
+    @post = current_team.posts.new(post_params)
     @post.user = current_user
 
     if @post.save!
@@ -50,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def resource
-    @post = Post.find(params[:id])
+    @post ||= Post.find(params[:id])
   end
 
   def post_params
