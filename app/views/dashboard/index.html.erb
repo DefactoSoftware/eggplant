@@ -1,4 +1,4 @@
-<h1>Dashboard</h1>
+<h1><%= t("dashboard") %></h1>
 <div>
   <% @teams.each do |team| %>
   <div>
@@ -9,7 +9,7 @@
     <% team.posts.first(5).each do |post| %>
       <div>
         <%= link_to post.tweet, team_post_path(post.team, post) %>
-        <%= link_to "Tweet!", team_tweet_post_path(post.team, post), method: :post %>
+        <%= link_to t("actions.tweet"), team_tweet_post_path(post.team, post), method: :post %>
       </div>
     <% end %>
 

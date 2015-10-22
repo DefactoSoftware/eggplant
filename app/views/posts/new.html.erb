@@ -1,11 +1,14 @@
+<div>
+  <%= link_to t("posts.back_to_all_posts", team_name: @post.team.name), team_posts_path(current_team) %>
+</div>
 <%= form_for @post, url: team_posts_path do |f| %>
   <div class="tweet">
-    <%= f.label :tweet %>
+    <%= f.label t("posts.tweet") %>
     <%= f.text_area :tweet %>
   </div>
 
   <div class="planned-time">
-    <%= f.label :planned_time %>
+    <%= f.label t("posts.planned_time") %>
     <%= f.datetime_select :planned_time %>
   </div>
   <%= f.submit class: "button" %>

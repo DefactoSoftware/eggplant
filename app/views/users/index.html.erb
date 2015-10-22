@@ -1,11 +1,11 @@
 <div>
-  <h1>All Users</h1>
+  <h1><%= t("users.all_users") %></h1>
   <% @users.each do |user| %>
     <div class="user">
       <%= image_tag user.image_url, class: "avatar small" %>
       <%= user.name %>
       <% if current_user.id == user.id %>
-        <%= link_to "(edit your profile)", edit_user_path(user) %>
+        (<%= link_to t("users.edit_profile"), edit_user_path(user) %>)
       <% end %>
     <hr>
     </div>
