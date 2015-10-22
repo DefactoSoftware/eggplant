@@ -1,9 +1,12 @@
 <div>
-  <%= @post.tweet %>
-  <hr>
-  <%= @post.planned_time %>
-
+  <div>
+    <%= link_to t("posts.back_to_all_posts", team_name: @post.team.name), team_posts_path(current_team) %>
+  </div>
+  <%= @post.tweet %><br>
+  <%= @post.planned_time %><br>
+  <%= link_to t("actions.edit"), edit_team_post_path(@post.team, @post) %> |
+  <%= link_to t("actions.delete"), team_post_path(@post.team, @post), method: :delete %>
   <p>
-    <%= button_to "Tweet!", team_tweet_post_path(@post.team, @post), class: "button" %>
+    <%= button_to t("actions.tweet"), team_tweet_post_path(@post.team, @post), class: "button" %>
   </p>
 </div>

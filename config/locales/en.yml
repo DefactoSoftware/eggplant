@@ -1,23 +1,36 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  home:
+    cta: "Get Started"
+    tagline: "helps your team tweet better"
+  navigation:
+    sign_in_with_twitter: "Sign in with Twitter"
+    sign_out: "Sign Out"
+    teams: "Teams"
+  actions:
+    edit: "edit"
+    delete: "delete"
+    tweet: "Tweet!"
+    save: "Save changes"
+  users:
+    all_users: "All Users"
+    edit_profile: "Edit your profile"
+    name: "Name"
+    profile: "User Profile"
+  dashboard: "Dashboard"
+  teams:
+    description: "Description"
+    edit: "Edit"
+    join_team: "Join Team!"
+    leave_team: "Leave Team :("
+    members: "Members"
+    name: "Name"
+    new_team: "New Team"
+    owner: "owner"
+    posts: "Posts"
+    posts_for: "Posts for"
+  posts:
+    edit: "Edit"
+    new_post: "New Post!"
+    planned_time: "Planned time"
+    tweet: "Tweet"
+    back_to_all_posts: "Back to all posts for %{team_name}"

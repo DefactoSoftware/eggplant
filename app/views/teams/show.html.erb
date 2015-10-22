@@ -4,13 +4,14 @@
     <%= @team.description %>
   </p>
   <p>
-    <%= link_to 'Posts', team_posts_path(@team) %>
+    <%= link_to t("teams.posts"), team_posts_path(@team) %>
   </p>
-  <h2>Members</h2>
+  <h2><%= t("team.members") %></h2>
   <ul>
 
     <li>
-      <%= link_to @team.owner.name, user_path(@team.owner) %>(owner)
+      <%= link_to @team.owner.name, user_path(@team.owner) %>
+      <%= t("teams.owner") %>
     </li>
     <% @team.users.each do |member| %>
       <li><%= member.name %></li>
@@ -19,8 +20,8 @@
 
   <p>
     <% if is_member %>
-      <%= link_to "Leave Team :(", leave_team_path(@team), method: :post, class: "button" %>
+      <%= button_to t("teams.leave_team"), leave_team_path(@team), class: "button" %>
     <% else %>
-      <%= link_to "Join Team!", join_team_path(@team), method: :post, class: "button" %>
+      <%= button_to t("teams.join_team"), join_team_path(@team), class: "button" %>
     <% end %>
 </div>

@@ -1,12 +1,12 @@
-<h1>Update your profile</h1>
+<h1><%= t("users.edit_profile") %></h1>
 
 <%= image_tag @user.image_url %>
 
 <%= form_for(@user) do |f| %>
 
 
-  <%= f.label :name %>
+  <%= f.label t("users.name") %>
   <%= f.text_field :name %>
 
-  <%= f.submit "Save changes", class: "button" %>
+  <%= f.submit t("actions.save"), class: "button" %>
 <% end %>

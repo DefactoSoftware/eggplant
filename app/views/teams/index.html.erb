@@ -3,12 +3,12 @@
   <div>
     <%= link_to team.name, team_path(team) %>
 
-    <%= link_to 'edit', edit_team_path(team) %> |
-    <%= link_to 'delete', team_path(team), method: :delete %>
+    <%= link_to t("actions.edit"), edit_team_path(team) %> |
+    <%= link_to t("actions.delete"), team_path(team), method: :delete %>
   </div>
   <hr>
   <% end %>
   <p>
-    <%= link_to 'New Team', new_team_path, method: :get, class: "button" %>
+    <%= link_to t("teams.new_team"), new_team_path, method: :get, class: "button" %>
   </p>
 </div>

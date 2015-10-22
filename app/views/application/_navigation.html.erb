@@ -6,13 +6,13 @@
       <% end %>
     <span class="user-menu pull-right">
       <% if current_user %>
-        <%= link_to 'Teams', teams_path %>
+        <%= link_to t("navigation.teams"), teams_path %>
         <%= link_to user_path(current_user) do %>
           <%= image_tag current_user.image_url, class: "avatar" %>
         <% end %>
-        <%= link_to "Sign Out", signout_path, class: "button" %>
+        <%= link_to t("navigation.sign_out"), signout_path, class: "button" %>
       <% else %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter", class: "button" %>
+        <%= link_to t("navigation.sign_in_with_twitter"), "/auth/twitter", class: "button" %>
       <% end %>
     </span>
   </section>

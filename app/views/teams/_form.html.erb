@@ -1,12 +1,12 @@
 <%= form_for @team do |f| %>
 
   <div class="team-name">
-    <%= f.label :name %>
+    <%= f.label t("teams.name") %>
     <%= f.text_field :name %>
   </div>
 
   <div class="team-description">
-    <%= f.label :description %>
+    <%= f.label t("team.description") %>
     <%= f.text_area :description %>
   </div>
   <%= f.submit class: "button" %>
