@@ -16,6 +16,7 @@ class TeamsController < ApplicationController
     @team.owner = current_user
 
     if @team.save!
+      create_membership(current_user, @team)
       redirect_to team_path(@team)
     else
       render :new
@@ -41,17 +42,24 @@ class TeamsController < ApplicationController
   end
 
   def join
-    @membership = Membership.new
-    @membership.user = current_user
-    @membership.team = resource
-    @membership.save
-    redirect_to team_path(resource)
+    if create_membership(current_user, resource)
+      redirect_to team_path(resource)
+    else
+      render :show, notice: "Something went wrong"
+    end
   end
 
   def leave
     @membership = current_user.memberships.find_by_team_id(resource.id)
     @membership.destroy!
     redirect_to team_path(resource)
+  end
+
+  def create_membership(user, team)
+    @membership = Membership.new
+    @membership.user = user
+    @membership.team = team
+    @membership.save
   end
 
   private
@@ -72,6 +80,6 @@ class TeamsController < ApplicationController
   end
 
   def is_member
-    return true if resource.users.include?(current_user)
+    resource.users.include?(current_user)
   end
 end
