@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def twitter_url
-    'https://www.twitter.com/@' + twitter_handle
+    "https://www.twitter.com/@" + twitter_handle
   end
 end
 
