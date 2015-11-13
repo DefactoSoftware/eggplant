@@ -1,5 +1,9 @@
 <div>
   <h1><%= @team.name %> <%= link_to "(@#{@team.owner.twitter_handle})", @team.owner.twitter_url %></h1>
+  <% if current_user = @team.owner %>
+    <%= link_to t("actions.edit"), edit_team_path(@team) %> |
+    <%= link_to t("actions.delete"), team_path(@team), method: :delete %>
+  <% end %>
   <p>
     <%= @team.description %>
   </p>
@@ -8,10 +12,9 @@
   </p>
   <h2><%= t("team.members") %></h2>
   <ul>
-
     <li>
       <%= link_to @team.owner.name, user_path(@team.owner) %>
-      <%= t("teams.owner") %>
+      (<%= t("teams.owner") %>)
     </li>
     <% @team.users.each do |member| %>
       <li><%= member.name %></li>
@@ -24,4 +27,5 @@
     <% else %>
       <%= button_to t("teams.join_team"), join_team_path(@team), class: "button" %>
     <% end %>
+  </p>
 </div>

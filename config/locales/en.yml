@@ -28,6 +28,7 @@ en:
     owner: "owner"
     posts: "Posts"
     posts_for: "Posts for"
+    back_to_team: "Back to %{team_name}"
   posts:
     edit: "Edit"
     new_post: "New Post!"
