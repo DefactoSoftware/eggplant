@@ -7,12 +7,11 @@
     </h2>
 
     <% team.posts.first(5).each do |post| %>
-      <div>
+      <div class="tweet">
         <%= link_to post.tweet, team_post_path(post.team, post) %>
-        <%= link_to t("actions.tweet"), team_tweet_post_path(post.team, post), method: :post %>
+        <%= button_to t("actions.tweet"), team_tweet_post_path(post.team, post) %>
       </div>
     <% end %>
-
   </div>
   <% end %>
 </div>

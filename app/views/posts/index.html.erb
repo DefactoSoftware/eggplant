@@ -1,11 +1,9 @@
 <div>
+  <%= link_to t("teams.back_to_team", team_name: current_team.name), team_path(current_team) %>
   <h1><%= t("teams.posts_for") %> for <%= current_team.name %></h1>
   <% @posts.each do |post| %>
   <div>
     <%= link_to post.tweet, team_post_path(post.team, post) %>
-    <%= post.planned_time %>
-    <%= link_to t("actions.edit"), edit_team_post_path(post.team, post) %> |
-    <%= link_to t("actions.delete"), team_post_path(post.team, post), method: :delete %>
   </div>
   <% end %>
   <p>
