@@ -80,6 +80,6 @@ class TeamsController < ApplicationController
   end
 
   def is_member
-    return true if resource.users.include?(current_user)
+    resource.users.include?(current_user)
   end
 end
