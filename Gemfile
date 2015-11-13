@@ -14,6 +14,7 @@ gem "normalize-rails"
 gem "bourbon"
 gem "twitter"
 gem "attr_encrypted"
+gem "puma"
 
 group :development, :test do
   gem "byebug"
