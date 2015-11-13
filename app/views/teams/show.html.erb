@@ -12,10 +12,6 @@
   </p>
   <h2><%= t("team.members") %></h2>
   <ul>
-    <li>
-      <%= link_to @team.owner.name, user_path(@team.owner) %>
-      (<%= t("teams.owner") %>)
-    </li>
     <% @team.users.each do |member| %>
       <li><%= member.name %></li>
     <% end %>
