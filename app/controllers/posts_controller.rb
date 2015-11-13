@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_filter :authorize
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :only_authorize_team_members
 
   def index
     @posts = Post.where team: current_team
@@ -58,6 +59,12 @@ class PostsController < ApplicationController
     @user = resource.user
     unless @user == current_user
       redirect_to team_posts_path, notice: "Not authorized"
+    end
+  end
+
+  def only_authorize_team_members
+    unless current_team.users.include?(current_user)
+      redirect_to teams_path, notice: "Not authorized"
     end
   end
 
