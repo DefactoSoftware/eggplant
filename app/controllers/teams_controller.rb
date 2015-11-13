@@ -55,12 +55,6 @@ class TeamsController < ApplicationController
     redirect_to team_path(resource)
   end
 
-  def create_membership(user, team)
-    @membership = Membership.new
-    @membership.user = user
-    @membership.team = team
-    @membership.save
-  end
 
   private
 
@@ -81,5 +75,12 @@ class TeamsController < ApplicationController
 
   def is_member
     resource.users.include?(current_user)
+  end
+
+  def create_membership(user, team)
+    @membership = Membership.new
+    @membership.user = user
+    @membership.team = team
+    @membership.save
   end
 end
