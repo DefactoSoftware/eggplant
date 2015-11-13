@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :team
+
+  validates :tweet, presence: true
+  validates :planned_time, presence: true
 end
 
 # == Schema Information
