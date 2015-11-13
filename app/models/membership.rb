@@ -1,3 +1,8 @@
+class Membership < ActiveRecord::Base
+   belongs_to :user
+   belongs_to :team
+end
+
 # == Schema Information
 #
 # Table name: memberships
@@ -9,7 +14,3 @@
 #  updated_at :datetime         not null
 #
 
-class Membership < ActiveRecord::Base
-   belongs_to :user
-   belongs_to :team
-end
