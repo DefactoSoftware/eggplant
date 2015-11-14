@@ -1,13 +1,19 @@
 <%= form_for @team do |f| %>
 
   <div class="team-name">
-    <%= f.label t("teams.name") %>
+    <%= f.label :name, t("teams.name") %>
     <%= f.text_field :name %>
+    <% if @team.errors[:name] %>
+      <% @team.errors[:name].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+
   </div>
 
   <div class="team-description">
-    <%= f.label t("teams.description") %>
+    <%= f.label :description, t("teams.description") %>
     <%= f.text_area :description %>
   </div>
-  <%= f.submit class: "button" %>
+  <%= f.submit t("teams.create_team"), class: "button" %>
 <% end %>
