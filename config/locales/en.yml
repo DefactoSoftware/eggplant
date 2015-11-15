@@ -1,4 +1,13 @@
 en:
+  actions:
+    edit: "edit"
+    delete: "delete"
+    tweet: "Tweet!"
+    save: "Save changes"
+  errors:
+    messages:
+      blank: "Can't be blank"
+  dashboard: "Dashboard"
   home:
     cta: "Get Started"
     tagline: "helps your team tweet better"
@@ -6,20 +15,18 @@ en:
     sign_in_with_twitter: "Sign in with Twitter"
     sign_out: "Sign Out"
     teams: "Teams"
-  actions:
-    edit: "edit"
-    delete: "delete"
-    tweet: "Tweet!"
-    save: "Save changes"
-  users:
-    all_users: "All Users"
-    edit_profile: "Edit your profile"
-    name: "Name"
-    profile: "User Profile"
-  dashboard: "Dashboard"
+  posts:
+    edit: "Edit"
+    new_post: "New Post!"
+    planned_time: "Planned time"
+    tweet: "Tweet"
+    back_to_all_posts: "Back to all posts for %{team_name}"
   teams:
+    back_to_team: "Back to %{team_name}"
+    create_team: "Create Team"
     description: "Description"
     edit: "Edit"
+    fail: "We could not create a team"
     join_team: "Join Team!"
     leave_team: "Leave Team :("
     members: "Members"
@@ -28,10 +35,8 @@ en:
     owner: "owner"
     posts: "Posts"
     posts_for: "Posts for"
-    back_to_team: "Back to %{team_name}"
-  posts:
-    edit: "Edit"
-    new_post: "New Post!"
-    planned_time: "Planned time"
-    tweet: "Tweet"
-    back_to_all_posts: "Back to all posts for %{team_name}"
+  users:
+    all_users: "All Users"
+    edit_profile: "Edit your profile"
+    name: "Name"
+    profile: "User Profile"

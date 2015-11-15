@@ -15,10 +15,11 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.owner = current_user
 
-    if @team.save!
+    if @team.save
       create_membership(current_user, @team)
       redirect_to team_path(@team)
     else
+      flash[:error] = t("teams.fail")
       render :new
     end
   end

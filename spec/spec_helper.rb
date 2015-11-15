@@ -1,8 +1,8 @@
 ENV["RAILS_ENV"] = "test"
 
 if ENV['RAILS_ENV'] == 'test'
-    require "simplecov"
-    SimpleCov.start "rails"
+  require "simplecov"
+  SimpleCov.start "rails"
 end
 require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
@@ -15,7 +15,7 @@ require "shoulda/matchers"
 Dir[File.expand_path(File.join(File.dirname(__FILE__),"support","**","*.rb"))].each {|f| require f}
 
 module Features
-    # Extend this module in spec/support/features/*.rb
+  # Extend this module in spec/support/features/*.rb
 end
 
 RSpec.configure do |config|
@@ -33,6 +33,7 @@ RSpec.configure do |config|
   config.order = "random"
   config.use_transactional_fixtures = false
   config.include ActionDispatch::TestProcess
+  config.include IntegrationSpecHelper, type: :feature
 
   DatabaseCleaner.strategy = :truncation
 
@@ -47,6 +48,20 @@ end
 
 Capybara.javascript_driver = :webkit
 WebMock.disable_net_connect!(allow_localhost: true)
+
+Capybara.default_host = "http://example.org"
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:twitter, {
+  info: {
+    uid: "12345",
+    nickname: "zapnap"
+  },
+  credentials: {
+    token: "929ejelf2",
+    secret: "twitter_secret"
+  }
+})
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

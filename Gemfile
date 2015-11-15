@@ -12,6 +12,7 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem "normalize-rails"
 gem "bourbon"
+gem "refills"
 gem "twitter"
 gem "attr_encrypted"
 gem "puma"
@@ -29,7 +30,7 @@ group :test do
   gem "database_cleaner"
   gem "factory_girl_rails"
   gem "ffaker"
-  gem "shoulda-matchers", "~> 3.0"
+  gem "shoulda-matchers", "~> 3.0", require: false
   gem "simplecov"
   gem "webmock"
 end

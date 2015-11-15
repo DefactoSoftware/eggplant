@@ -1,6 +1,11 @@
-class Membership < ActiveRecord::Base
-   belongs_to :user
-   belongs_to :team
+require "spec_helper"
+
+describe Membership, type: :model do
+
+  describe "associations" do
+    it { should belong_to :user }
+    it { should belong_to :team }
+  end
 end
 
 # == Schema Information
@@ -13,4 +18,5 @@ end
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+
 
